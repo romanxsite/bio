@@ -1,136 +1,164 @@
-@font-face {
-  font-family: 'CustomFont';
-  src: url('wvrbvfnafxtazrvybrms.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.center-wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
-body, html {
-  margin: 0; padding: 0; height: 100%;
-  font-family: 'CustomFont', Arial, sans-serif;
-  color: white;
-  overflow-x: hidden;
+.container {
+    pointer-events: auto;
+    margin: 0;
+    top: unset;
+    left: unset;
+    transform: none;
 }
-#bg-gif {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('rizz/pony.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  z-index: -1;
-}
-#overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  transition: opacity 1s ease;
-}
-#enter {
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}
-.hidden {
-  display: none;
-}
-#main-content {
-  opacity: 0;
-  max-width: 900px;
-  margin: 80px auto 50px;
-  padding: 0 15px;
-  transition: opacity 1s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-#main-content.visible {
-  opacity: 1;
-}
-.card {
-  background: rgba(0,0,0,0.5);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
-  padding: 25px;
-}
-.bio-card {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-.links {
-  margin-top: 15px;
+.links a {
+    display: inline-block;
+    margin: 0 8px;
+    color: #fff;
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
+    font-size: 0;
+    outline: none;
+    box-shadow: none;
+    vertical-align: middle;
 }
 .links a img {
-  width: 35px;
-  height: 35px;
-  margin: 0 10px;
-  filter: none;
-  transition: transform 0.3s ease;
+    display: block;
+    width: 32px;
+    height: 32px;
+    transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
+    filter: brightness(0) saturate(100%) invert(1);
 }
-.links a img:hover {
-  transform: scale(1.1);
+.links a:hover img {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) drop-shadow(0 0 12px #0078d4) drop-shadow(0 0 8px #fff);
 }
-.section-card {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.667));
 }
-.section-card h2 {
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
+.profile-pic:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 16px #0078d4) drop-shadow(0 0 8px #fff);
 }
-.card-grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+
+
+* {
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
 }
-.info-card {
-  background: rgba(255 255 255 / 0.1);
-  border-radius: 12px;
-  width: 150px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  transition: background 0.3s ease;
+
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: url('/tuff/bg.gif') center center/cover no-repeat;
 }
-.info-card:hover {
-  background: rgba(255 255 255 / 0.25);
+
+
+.container {
+    max-width: 400px;
+    background: rgba(10, 10, 20, 0.82);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.32);
+    padding: 32px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    backdrop-filter: blur(2px);
 }
-.info-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 10px;
+
+#overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.info-card p {
-  font-weight: 600;
-  font-size: 1rem;
-  margin: 0;
+
+#enter-popup {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 2em;
+    text-shadow: 0 0 8px #0084ff, 0 0 2px #fff;
+    transition: text-shadow 0.2s, filter 0.2s;
+    filter: brightness(1);
+    outline: none;
+    box-shadow: none;
+    padding: 0;
 }
-.music-player {
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
+#enter-popup:hover {
+    text-shadow: 0 0 16px #0091ff, 0 0 8px #fff;
+    filter: brightness(1.2);
+}
+#enter-popup.clicked {
+    text-shadow: 0 0 32px #fff, 0 0 24px #0078d4, 0 0 8px #fff;
+    filter: brightness(1.5);
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    font-size: 2em;
+}
+h2 {
+    margin: 0 0 16px 0;
+    color: #d1d1d1;
+    font-weight: 400;
+}
+.bio {
+    color: #d8d8d8;
+    margin-bottom: 24px;
+}
+.links a {
+    display: inline-block;
+    margin: 0 8px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    transition: filter 0.2s, box-shadow 0.2s;
+    font-size: 0;
+    outline: none;
+    box-shadow: none;
+    vertical-align: middle;
+}
+.links a svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.667)) drop-shadow(0 0 2px #ffffffaa);
+    transition: filter 0.2s;
+    fill: #fff;
+    color: #fff;
+}
+.links a:hover svg {
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 4px #ffffff);
 }
