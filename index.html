@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soloo :3</title>
-    
+    <title>soloo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+      #vanta-bg {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        z-index: 0;
+      }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
 </head>
 <body>
     <div id="vanta-bg"></div>
@@ -19,16 +33,43 @@
     </div>
     <div class="center-wrapper">
         <div class="container" style="filter:blur(18px);transition:filter 1s;position:relative;z-index:2;">
-        <img src="/tuff/solo.gif" alt="my pfp?!?!" class="profile-pic">
-        <h1>soloo</h1>
-        <h2>frontend web dev.</h2>
-        <div class="links">
-            <a href="https://solocentral.lol" target="_blank" aria-label="Solo Central"><img src="/tuff/games.svg" width="28" height="28" alt="Games" /></a>
-            <a href="https://github.com/qatual" target="_blank" aria-label="GitHub"><img src="/tuff/github.png" width="28" height="28" alt="GitHub" /></a>
-            <a href="https://discord.gg/unblockedsites" target="_blank" aria-label="Discord"><img src="/tuff/discord.png" width="28" height="28" alt="Discord" /></a>
-        </div>
+            <img src="/tuff/solo.gif" alt="my pfp?!?!" class="profile-pic">
+            <h1>soloo</h1>
+            <h2>highly dumb web dev.</h2>
+            <div class="section-label">projects</div>
+            <div class="links" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+                <span class="link-text"><a href="https://solocentral.lol" target="_blank" aria-label="mail">solo central</a></span>
+                <span class="link-text"><a href="https://quickhost.click" target="_blank" aria-label="mail">solobox</a></span>
+            </div>
+            <div class="section-label" style="margin-top:1.5em;">socials</div>
+            <div class="links" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
+                <span class="link-text"><a href="https://github.com/qatual" target="_blank" aria-label="github">github</a></span>
+                <span class="link-text"><a href="mailto:central@soloo.win" target="_blank" aria-label="mail">email</a></span>
+            </div>
         </div>
     </div>
-</body>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    console.log("sub to soloo lololololol");
+    if (window.VANTA && window.VANTA.CELLS) {
+      VANTA.CELLS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        color1: 0x2e0693,
+        color2: 0x152a8e
+      });
+    } else {
+      console.error("yo dumbass fucking vanta wont load, stupid amatuer");
+    }
+  });
+</script>
+    <script src="/gay/three.r134.min.js"></script>
+    <script src="/gay/vanta.cells.min.js"></script>
     <script src="script.js"></script>
+</body>
 </html>
